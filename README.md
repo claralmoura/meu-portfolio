@@ -23,7 +23,7 @@ O design segue uma estética minimalista e elegante, com funcionalidades de UX a
 
 Acompanhe a versão mais recente e online através deste link, após o deploy:
 
-[Deploy Vercel (https://meu-portfolio-roan-xi.vercel.app/)]
+[Deploy Vercel](https://meu-portfolio-roan-xi.vercel.app/)
 
 </br>
 
@@ -42,7 +42,7 @@ Clara Lívia M. de Oliveira. 🧡
 </div>
 
 ## Dúvida?
-Em caso de dúvidas ou propostas, envie-me um email: claralivia2303@hotmail.com.
+Em caso de dúvidas ou propostas, envie-me um email: claramoura2303@gmail.com.
 
 ## Licença
 Este projeto está sob a licença [MIT](https://github.com/claralmoura/meu-portfolio/blob/main/LICENSE).
