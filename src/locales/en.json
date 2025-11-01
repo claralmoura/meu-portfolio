@@ -1,0 +1,95 @@
+{
+  "about": {
+    "title": "Fullstack Developer passionate about clean code and scalable solutions",
+    "description": "Over two years of experience in a B2B startup, working on creating, optimizing, and maintaining web solutions. Focus on system performance, MongoDB query optimization, and technical mentoring. Solid knowledge of JavaScript, Node.js (NestJS, Express), Vue.js, and Serverless architecture."
+  },
+  "buttons": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "jobs": [
+      {
+        "title": "Fullstack Developer (Pleno)",
+        "company": "COTABOX TECNOLOGIA E SOFTWARE LTDA",
+        "date": "November/2025 - Present",
+        "points": [
+          "Technical leadership of development projects.",
+          "Responsible for mentoring new talent and organizing the development area.",
+          "Direct involvement in resolving critical bugs and implementing complex system improvements."
+        ]
+      },
+      {
+        "title": "Fullstack Developer (Junior)",
+        "company": "COTABOX TECNOLOGIA E SOFTWARE LTDA",
+        "date": "July/2024 - November/2025",
+        "points": [
+          "Led application performance optimization, restructuring slow MongoDB queries and refactoring code bottlenecks.",
+          "Responsible for technical mentoring and onboarding new interns to the company's stack.",
+          "Active participation in the PCI DSS security certification process, adapting system components to required standards."
+        ]
+      },
+      {
+        "title": "Fullstack Development Intern",
+        "company": "COTABOX TECNOLOGIA E SOFTWARE LTDA",
+        "date": "November/2023 - July/2024",
+        "points": [
+          "Creation of responsive UI components with Vue.js and collaboration in agile methodologies."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Personal Projects",
+    "items": [
+      {
+        "title": "My Finances",
+        "description": "Full-stack app for personal financial management.",
+        "challenge": "Excel spreadsheets were no longer sufficient for effective financial control and tracking personal goals.",
+        "solution": "I developed a full-stack application with a NestJS/GraphQL backend and a Vue.js 3 frontend, creating interactive dashboards for visual management.",
+        "tags": ["Vue.js 3", "NestJS", "GraphQL", "MongoDB", "TypeScript"],
+        "githubUrl": "https://github.com/claralmoura/financial-app"
+      },
+      {
+        "title": "Beauty Manager",
+        "description": "Academic application for beauty salon scheduling.",
+        "challenge": "My mother's beauty salon struggled with manual scheduling, which caused errors like double bookings or forgotten appointments.",
+        "solution": "I created a scheduling application with a REST API (Python/FastAPI) and a React frontend, allowing clients and administrators to manage schedules.",
+        "tags": ["React", "Python", "FastAPI", "MongoDB"],
+        "githubUrl": "https://github.com/afonsomateus21/bm-web"
+      },
+      {
+        "title": "Gestalt in Media",
+        "description": "Academic interactive media on Gestalt principles.",
+        "challenge": "Translate theoretical Gestalt concepts into a digital experience, explaining how these principles apply in movies, series, and games.",
+        "solution": "I developed an interactive media using React, TypeScript, and Vite. The site visually presents the concepts and exemplifies Gestalt in the context of these media.",
+        "tags": ["React", "TypeScript", "Vite", "UI/UX"],
+        "githubUrl": "https://github.com/afonsomateus21/gestalt-midia"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "categories": [
+      { "name": "Back-end", "items": ["Node.js", "NestJS", "Express", "GraphQL", "Serverless"] },
+      { "name": "Front-end", "items": ["Vue.js", "React", "Nuxt.js", "HTML5", "CSS3", "Tailwind CSS"] },
+      { "name": "Database", "items": ["MongoDB", "MySQL"] },
+      { "name": "Cloud & DevOps", "items": ["AWS", "GCP", "Docker", "Git"] }
+    ]
+  },
+  "contact": {
+    "title": "Let's Talk?",
+    "description": "I'm open to new opportunities and connections. Feel free to get in touch via email or my social networks.",
+    "email": "claramoura2303@gmail.com",
+    "linkedinUrl": "https://linkedin.com/in/claralivia",
+    "githubUrl": "https://github.com/claralmoura"
+  },
+  "navbar": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "toggleTheme": "Toggle Theme"
+  }
+}
