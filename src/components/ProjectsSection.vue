@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
-import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/solid'
 
 interface Project {
   title: string
