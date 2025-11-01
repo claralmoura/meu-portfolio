@@ -2,6 +2,8 @@
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
 import { EnvelopeIcon } from '@heroicons/vue/24/solid'
+import GithubIcon from './icons/GithubIcon.vue'
+import LinkedinIcon from './icons/LinkedinIcon.vue'
 
 interface SkillCategory {
   name: string
@@ -31,23 +33,16 @@ const linkedinIcon = `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="
       </h2>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        
         <div v-for="category in skillCategories" :key="category.name" class="card-glass p-6">
-          
-          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-4">{{ category.name }}</h3>
-          
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-4">
+            {{ category.name }}
+          </h3>
+
           <div class="flex flex-col gap-1.5">
-            <span 
-              v-for="item in category.items" 
-              :key="item" 
-              class="
-                px-3 py-1.5 rounded-lg text-sm 
-                bg-white/30 dark:bg-white/10 
-                border border-white/20 dark:border-white/20 
-                text-neutral-800 dark:text-white 
-                transition-colors duration-200 
-                hover:bg-white/50 dark:hover:bg-white/20
-              "
+            <span
+              v-for="item in category.items"
+              :key="item"
+              class="px-3 py-1.5 rounded-lg text-sm bg-white/30 dark:bg-white/10 border border-white/20 dark:border-white/20 text-neutral-800 dark:text-white transition-colors duration-200 hover:bg-white/50 dark:hover:bg-white/20"
             >
               {{ item }}
             </span>
@@ -66,11 +61,11 @@ const linkedinIcon = `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a :href="contactInfo.linkedinUrl" target="_blank" class="contact-btn w-full sm:w-auto">
-          <span v-html="linkedinIcon" class="w-6 h-6"></span>
+          <LinkedinIcon class="w-6 h-6" />
           <span>LinkedIn</span>
         </a>
         <a :href="contactInfo.githubUrl" target="_blank" class="contact-btn w-full sm:w-auto">
-          <span v-html="githubIcon" class="w-6 h-6"></span>
+          <GithubIcon class="w-6 h-6" />
           <span>GitHub</span>
         </a>
         <a :href="`mailto:${contactInfo.email}`" class="contact-btn w-full sm:w-auto">

@@ -1,17 +1,10 @@
+import aspectRatio from '@tailwindcss/aspect-ratio'
 import colors from 'tailwindcss/colors'
 
 export default {
   darkMode: 'class',
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
-  safelist: [
-    'blur-[60px]',
-    'blur-[100px]',
-    'blur-[120px]',
-    'blur-[140px]'
-  ],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  safelist: ['blur-[60px]', 'blur-[100px]', 'blur-[120px]', 'blur-[140px]'],
   theme: {
     extend: {
       colors: {
@@ -55,5 +48,5 @@ export default {
       },
     },
   },
-  plugins: [require('@tailwindcss/aspect-ratio')],
+  plugins: [aspectRatio],
 }

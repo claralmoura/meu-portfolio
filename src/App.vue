@@ -21,56 +21,25 @@ const blobStyle = computed(() => ({
 
 <template>
   <div
-    class="
-      relative min-h-screen overflow-hidden
-      font-sans antialiased
-      transition-colors duration-300
-      bg-neutral-100 text-neutral-800 
-      dark:bg-neutral-900 dark:text-gray-200
-    "
+    class="relative min-h-screen overflow-hidden font-sans antialiased transition-colors duration-300 bg-neutral-100 text-neutral-800 dark:bg-neutral-900 dark:text-gray-200"
   >
     <!-- 🔹 Fundo animado com bolhas Glassmorphism -->
-    <div
-      class="
-        absolute inset-0 z-0 overflow-hidden
-        pointer-events-none
-        backdrop-blur-[60px] backdrop-saturate-[180%]
-      "
-    >
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none backdrop-blur-[60px] backdrop-saturate-[180%]">
       <!-- Bolha superior esquerda -->
       <div
-        class="
-          absolute top-20 -left-20 w-80 h-80 rounded-full
-          bg-gradient-to-r from-blue-300/50 to-indigo-400/40
-          dark:from-blue-700/20 dark:to-indigo-800/20
-          blur-[120px] opacity-60 dark:opacity-40
-          animate-blob
-        "
+        class="absolute top-20 -left-20 w-80 h-80 rounded-full bg-gradient-to-r from-blue-300/50 to-indigo-400/40 dark:from-blue-700/20 dark:to-indigo-800/20 blur-[120px] opacity-60 dark:opacity-40 animate-blob"
       ></div>
 
       <!-- Bolha inferior direita -->
       <div
-        class="
-          absolute bottom-40 -right-20 w-[28rem] h-[28rem] rounded-full
-          bg-gradient-to-tr from-pink-300/50 to-purple-400/40
-          dark:from-pink-700/20 dark:to-purple-800/20
-          blur-[140px] opacity-60 dark:opacity-40
-          animate-blob
-        "
+        class="absolute bottom-40 -right-20 w-[28rem] h-[28rem] rounded-full bg-gradient-to-tr from-pink-300/50 to-purple-400/40 dark:from-pink-700/20 dark:to-purple-800/20 blur-[140px] opacity-60 dark:opacity-40 animate-blob"
         style="animation-delay: 4s"
       ></div>
 
       <!-- Bolha que segue o mouse -->
       <div
         :style="blobStyle"
-        class="
-          absolute top-0 left-0 w-[22rem] h-[22rem] rounded-full
-          bg-gradient-to-br from-emerald-300/50 to-cyan-400/40
-          dark:from-emerald-600/20 dark:to-cyan-700/20
-          blur-[120px] opacity-60 dark:opacity-40
-          transition-transform duration-500 ease-out
-          will-change-transform
-        "
+        class="absolute top-0 left-0 w-[22rem] h-[22rem] rounded-full bg-gradient-to-br from-emerald-300/50 to-cyan-400/40 dark:from-emerald-600/20 dark:to-cyan-700/20 blur-[120px] opacity-60 dark:opacity-40 transition-transform duration-500 ease-out will-change-transform"
       ></div>
     </div>
 
@@ -98,23 +67,13 @@ const blobStyle = computed(() => ({
     >
       <div
         v-if="isScrolled"
-        class="
-          fixed top-0 left-0 w-full h-32
-          bg-gradient-to-b from-neutral-100/90 to-transparent
-          dark:from-neutral-900/90 dark:to-transparent
-          pointer-events-none z-20
-        "
+        class="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-neutral-100/90 to-transparent dark:from-neutral-900/90 dark:to-transparent pointer-events-none z-20"
       ></div>
     </transition>
 
     <!-- 🔸 Gradiente inferior -->
     <div
-      class="
-        fixed bottom-0 left-0 w-full h-64
-        bg-gradient-to-t from-neutral-100/90 to-transparent
-        dark:from-neutral-900/90 dark:to-transparent
-        pointer-events-none z-20
-      "
+      class="fixed bottom-0 left-0 w-full h-64 bg-gradient-to-t from-neutral-100/90 to-transparent dark:from-neutral-900/90 dark:to-transparent pointer-events-none z-20"
     ></div>
 
     <BackToTop />
@@ -123,7 +82,8 @@ const blobStyle = computed(() => ({
 
 <style scoped>
 @keyframes blob {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   33% {

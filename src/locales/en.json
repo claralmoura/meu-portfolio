@@ -34,9 +34,7 @@
         "title": "Fullstack Development Intern",
         "company": "COTABOX TECNOLOGIA E SOFTWARE LTDA",
         "date": "November/2023 - July/2024",
-        "points": [
-          "Creation of responsive UI components with Vue.js and collaboration in agile methodologies."
-        ]
+        "points": ["Creation of responsive UI components with Vue.js and collaboration in agile methodologies."]
       }
     ]
   },
@@ -82,8 +80,14 @@
   "skills": {
     "title": "Technical Skills",
     "categories": [
-      { "name": "Back-end", "items": ["Node.js", "NestJS", "Express", "GraphQL", "Serverless"] },
-      { "name": "Front-end", "items": ["Vue.js", "React", "Nuxt.js", "HTML5", "CSS3", "Tailwind CSS"] },
+      {
+        "name": "Back-end",
+        "items": ["Node.js", "NestJS", "Express", "GraphQL", "Serverless"]
+      },
+      {
+        "name": "Front-end",
+        "items": ["Vue.js", "React", "Nuxt.js", "HTML5", "CSS3", "Tailwind CSS"]
+      },
       { "name": "Database", "items": ["MongoDB", "MySQL"] },
       { "name": "Cloud & DevOps", "items": ["AWS", "GCP", "Docker", "Git"] }
     ]

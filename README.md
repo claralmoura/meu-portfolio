@@ -42,9 +42,11 @@ Clara Lívia M. de Oliveira. 🧡
 </div>
 
 ## Dúvida?
+
 Em caso de dúvidas ou propostas, envie-me um email: claramoura2303@gmail.com.
 
 ## Licença
+
 Este projeto está sob a licença [MIT](https://github.com/claralmoura/meu-portfolio/blob/main/LICENSE).
 
 ###### © Clara Lívia, 2025

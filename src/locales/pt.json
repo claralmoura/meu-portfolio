@@ -34,9 +34,7 @@
         "title": "Estagiária em Desenvolvimento Fullstack",
         "company": "COTABOX TECNOLOGIA E SOFTWARE LTDA",
         "date": "Novembro/2023 - Julho/2024",
-        "points": [
-          "Criação de componentes de interface responsivos com Vue.js e colaboração em metodologias ágeis."
-        ]
+        "points": ["Criação de componentes de interface responsivos com Vue.js e colaboração em metodologias ágeis."]
       }
     ]
   },
@@ -82,8 +80,14 @@
   "skills": {
     "title": "Habilidades Técnicas",
     "categories": [
-      { "name": "Back-end", "items": ["Node.js", "NestJS", "Express", "GraphQL", "Serverless"] },
-      { "name": "Front-end", "items": ["Vue.js", "React", "Nuxt.js", "HTML5", "CSS3", "Tailwind CSS"] },
+      {
+        "name": "Back-end",
+        "items": ["Node.js", "NestJS", "Express", "GraphQL", "Serverless"]
+      },
+      {
+        "name": "Front-end",
+        "items": ["Vue.js", "React", "Nuxt.js", "HTML5", "CSS3", "Tailwind CSS"]
+      },
       { "name": "Banco de Dados", "items": ["MongoDB", "MySQL"] },
       { "name": "Cloud & DevOps", "items": ["AWS", "GCP", "Docker", "Git"] }
     ]
