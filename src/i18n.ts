@@ -1,14 +1,12 @@
 import { createI18n } from 'vue-i18n'
 
-type MessageSchema = typeof import('./locales/pt.json')
-const files = import.meta.glob<Record<string, any>>('./locales/*.json', { eager: true })
+import pt from './locales/pt.json'
+import en from './locales/en.json'
 
-const messages = Object.fromEntries(
-  Object.entries(files).map(([path, module]) => {
-    const localeName = path.match(/\/(\w+)\.json$/)?.[1] || path
-    return [localeName, module.default as MessageSchema]
-  })
-)
+const messages = {
+  pt: pt,
+  en: en
+}
 
 const i18n = createI18n({
   legacy: false,
