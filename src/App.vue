@@ -1,7 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 import { useMouse } from '@vueuse/core'
 import { useScroll } from './composables/useScroll'
+
 import Navbar from './components/Navbar.vue'
 import AboutSection from './components/AboutSection.vue'
 import ExperienceSection from './components/ExperienceSection.vue'
@@ -10,61 +11,83 @@ import SkillsAndContact from './components/SkillsAndContact.vue'
 import BackToTop from './components/BackToTop.vue'
 
 const { isScrolled } = useScroll()
-
 const { x, y } = useMouse()
+
+// Posição da bolha que segue o mouse
 const blobStyle = computed(() => ({
-  transform: `translate(${x.value - 192}px, ${y.value - 192}px)`
+  transform: `translate(${x.value - 200}px, ${y.value - 200}px)`,
 }))
 </script>
 
 <template>
-  <div 
+  <div
     class="
-      relative overflow-hidden 
-      min-h-screen 
-      font-sans antialiased transition-colors duration-300
+      relative min-h-screen overflow-hidden
+      font-sans antialiased
+      transition-colors duration-300
       bg-neutral-100 text-neutral-800 
       dark:bg-neutral-900 dark:text-gray-200
     "
   >
-    
-    <div class="absolute top-0 left-0 w-full h-full z-0">
-      <div 
+    <!-- 🔹 Fundo animado com bolhas Glassmorphism -->
+    <div
+      class="
+        absolute inset-0 z-0 overflow-hidden
+        pointer-events-none
+        backdrop-blur-[60px] backdrop-saturate-[180%]
+      "
+    >
+      <!-- Bolha superior esquerda -->
+      <div
         class="
-          absolute top-20 -left-20 w-72 h-72 rounded-full 
-          filter blur-3xl opacity-50 dark:opacity-20
-          animate-color-1
+          absolute top-20 -left-20 w-80 h-80 rounded-full
+          bg-gradient-to-r from-blue-300/50 to-indigo-400/40
+          dark:from-blue-700/20 dark:to-indigo-800/20
+          blur-[120px] opacity-60 dark:opacity-40
+          animate-blob
         "
       ></div>
-      <div 
+
+      <!-- Bolha inferior direita -->
+      <div
         class="
-          absolute bottom-40 -right-20 w-80 h-80 rounded-full 
-          filter blur-3xl opacity-50 dark:opacity-20
-           animate-color-2 [animation-delay:4s]
+          absolute bottom-40 -right-20 w-[28rem] h-[28rem] rounded-full
+          bg-gradient-to-tr from-pink-300/50 to-purple-400/40
+          dark:from-pink-700/20 dark:to-purple-800/20
+          blur-[140px] opacity-60 dark:opacity-40
+          animate-blob
         "
+        style="animation-delay: 4s"
       ></div>
-      <div 
+
+      <!-- Bolha que segue o mouse -->
+      <div
         :style="blobStyle"
         class="
-          absolute top-0 left-0 w-96 h-96 rounded-full 
-          filter blur-3xl opacity-30 dark:opacity-10
-          animate-color-3
+          absolute top-0 left-0 w-[22rem] h-[22rem] rounded-full
+          bg-gradient-to-br from-emerald-300/50 to-cyan-400/40
+          dark:from-emerald-600/20 dark:to-cyan-700/20
+          blur-[120px] opacity-60 dark:opacity-40
           transition-transform duration-500 ease-out
+          will-change-transform
         "
       ></div>
     </div>
-    
-    <Navbar /> 
 
+    <!-- 🔸 Navbar -->
+    <Navbar />
+
+    <!-- 🔸 Conteúdo -->
     <div class="relative z-10 max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
       <main>
-        <AboutSection /> 
-        <ExperienceSection /> 
+        <AboutSection />
+        <ExperienceSection />
         <ProjectsSection />
         <SkillsAndContact />
       </main>
     </div>
 
+    <!-- 🔸 Gradiente superior -->
     <transition
       enter-active-class="transition ease-out duration-300"
       enter-from-class="opacity-0"
@@ -73,25 +96,45 @@ const blobStyle = computed(() => ({
       leave-from-class="opacity-100"
       leave-to-class="opacity-0"
     >
-      <div 
+      <div
         v-if="isScrolled"
         class="
-          fixed top-0 left-0 w-full h-32 
-          bg-gradient-to-b 
-          from-neutral-100 to-transparent 
-          dark:from-neutral-900 dark:to-transparent 
+          fixed top-0 left-0 w-full h-32
+          bg-gradient-to-b from-neutral-100/90 to-transparent
+          dark:from-neutral-900/90 dark:to-transparent
           pointer-events-none z-20
         "
       ></div>
     </transition>
-    
-    <div class="
-      fixed bottom-0 left-0 w-full h-64
-      bg-gradient-to-t 
-      from-neutral-100 to-transparent 
-      dark:from-neutral-900 dark:to-transparent 
-      pointer-events-none z-20
-    "></div>
+
+    <!-- 🔸 Gradiente inferior -->
+    <div
+      class="
+        fixed bottom-0 left-0 w-full h-64
+        bg-gradient-to-t from-neutral-100/90 to-transparent
+        dark:from-neutral-900/90 dark:to-transparent
+        pointer-events-none z-20
+      "
+    ></div>
+
     <BackToTop />
   </div>
 </template>
+
+<style scoped>
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 25px) scale(0.9);
+  }
+}
+
+.animate-blob {
+  animation: blob 14s infinite ease-in-out;
+}
+</style>

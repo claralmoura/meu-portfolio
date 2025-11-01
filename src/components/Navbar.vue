@@ -29,102 +29,99 @@ const toggleLocale = () => {
 <template>
   <header 
     class="
-      sticky top-0 z-30 py-6
-      transition-all duration-300 ease-in-out
+      sticky top-0 z-30 py-4 transition-all duration-300 ease-in-out
+      
+      /* Fundo Glassmorphism constante */
+      bg-white/30 dark:bg-neutral-900/30 backdrop-blur-xl border-b border-white/20 dark:border-white/10
     "
     :class="{
-      'bg-white/50 dark:bg-neutral-900/50 backdrop-blur-xl shadow-lg border-b border-gray-900/10 dark:border-white/10': isScrolled,
-      '': !isScrolled
+      'shadow-lg shadow-gray-300/40 dark:shadow-black/60': isScrolled,
     }"
   >
     <div class="max-w-4xl mx-auto flex justify-between items-center px-4 sm:px-0">
       
-      <a 
-        href="#about" 
-        @click="closeMobileMenu" 
-        class="text-2xl font-bold text-neutral-800 dark:text-white"
-      >
+      <a href="#about" class="text-2xl font-bold text-neutral-800 dark:text-white">
         Clara Lívia
       </a>
-      
+
       <nav class="hidden md:flex gap-6">
-        <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors">{{ t('navbar.about') }}</a>
-        <a href="#experience" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors">{{ t('navbar.experience') }}</a>
-        <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors">{{ t('navbar.projects') }}</a>
-        <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors">{{ t('navbar.contact') }}</a>
+        <a href="#about" class="nav-link">{{ t('navbar.about') }}</a>
+        <a href="#experience" class="nav-link">{{ t('navbar.experience') }}</a>
+        <a href="#projects" class="nav-link">{{ t('navbar.projects') }}</a>
+        <a href="#contact" class="nav-link">{{ t('navbar.contact') }}</a>
       </nav>
 
-      <div class="hidden md:flex items-center gap-4">
-        <button 
-          @click="toggleDark()" 
-          class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors"
-          aria-label="Toggle theme"
-        >
-          <SunIcon v-if="!isDark" class="w-6 h-6" />
-          <MoonIcon v-else class="w-6 h-6" />
+      <div class="hidden md:flex items-center gap-3">
+        <button @click="toggleDark()" class="icon-btn" aria-label="Toggle theme">
+          <MoonIcon v-if="isDark" class="w-6 h-6" />
+          <SunIcon v-else class="w-6 h-6" />
         </button>
-        <button 
-          @click="toggleLocale"
-          class="flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors"
-          aria-label="Change language"
-        >
+
+        <button @click="toggleLocale" class="icon-btn flex gap-1 items-center" aria-label="Change language">
           <LanguageIcon class="w-6 h-6" />
           <span class="font-medium">{{ locale.toUpperCase() }}</span>
         </button>
       </div>
 
-      <div class="flex md:hidden items-center gap-4">
-        <button 
-          @click="toggleLocale"
-          class="flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors"
-          aria-label="Change language"
-        >
+      <div class="flex md:hidden items-center gap-3">
+        <button @click="toggleLocale" class="icon-btn flex gap-1 items-center">
           <LanguageIcon class="w-6 h-6" />
           <span class="font-medium">{{ locale.toUpperCase() }}</span>
         </button>
-        <button 
-          @click="isMobileMenuOpen = !isMobileMenuOpen" 
-          class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors"
-          aria-label="Toggle menu"
-        >
+        <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="icon-btn">
           <XMarkIcon v-if="isMobileMenuOpen" class="w-7 h-7" />
           <Bars3Icon v-else class="w-7 h-7" />
         </button>
       </div>
-    </div> 
+    </div>
 
-    <transition
-      enter-active-class="transition ease-out duration-200"
-      enter-from-class="opacity-0 scale-95"
-      enter-to-class="opacity-100 scale-100"
-      leave-active-class="transition ease-in duration-100"
-      leave-from-class="opacity-100 scale-100"
-      leave-to-class="opacity-0 scale-95"
-    >
+    <transition name="fade-slide">
       <div 
         v-if="isMobileMenuOpen" 
         class="
-          md:hidden fixed top-0 left-0 w-full min-h-screen pt-28 p-6 
-          bg-white dark:bg-neutral-900 
-          flex flex-col items-center gap-8 z-10
+          md:hidden fixed inset-0 z-20 flex flex-col items-center 
+          gap-8 p-6 pt-24 min-h-screen
+          bg-white/80 dark:bg-neutral-900/80 backdrop-blur-3xl 
         "
       >
-        <a href="#about" @click="closeMobileMenu" class="text-2xl font-medium text-neutral-800 dark:text-gray-200 hover:text-blue-600">{{ t('navbar.about') }}</a>
-        <a href="#experience" @click="closeMobileMenu" class="text-2xl font-medium text-neutral-800 dark:text-gray-200 hover:text-blue-600">{{ t('navbar.experience') }}</a>
-        <a href="#projects" @click="closeMobileMenu" class="text-2xl font-medium text-neutral-800 dark:text-gray-200 hover:text-blue-600">{{ t('navbar.projects') }}</a>
-        <a href="#contact" @click="closeMobileMenu" class="text-2xl font-medium text-neutral-800 dark:text-gray-200 hover:text-blue-600">{{ t('navbar.contact') }}</a>
-        
-        <hr class="w-full border-gray-200 dark:border-gray-700 my-4" />
+        <a href="#about" @click="closeMobileMenu" class="text-2xl font-medium text-neutral-800 dark:text-white hover:text-blue-600">{{ t('navbar.about') }}</a>
+        <a href="#experience" @click="closeMobileMenu" class="text-2xl font-medium text-neutral-800 dark:text-white hover:text-blue-600">{{ t('navbar.experience') }}</a>
+        <a href="#projects" @click="closeMobileMenu" class="text-2xl font-medium text-neutral-800 dark:text-white hover:text-blue-600">{{ t('navbar.projects') }}</a>
+        <a href="#contact" @click="closeMobileMenu" class="text-2xl font-medium text-neutral-800 dark:text-white hover:text-blue-600">{{ t('navbar.contact') }}</a>
 
-        <button 
-          @click="toggleDark()" 
-          class="flex items-center gap-2 text-xl text-neutral-800 dark:text-gray-200"
-        >
-          <SunIcon v-if="!isDark" class="w-6 h-6" />
-          <MoonIcon v-else class="w-6 h-6" />
+        <hr class="w-full border-gray-300 dark:border-gray-700 my-4" />
+
+        <button @click="toggleDark()" class="flex items-center gap-2 text-xl text-neutral-800 dark:text-white">
+          <MoonIcon v-if="isDark" class="w-6 h-6" />
+          <SunIcon v-else class="w-6 h-6" />
           <span>{{ t('navbar.toggleTheme') }}</span>
         </button>
       </div>
     </transition>
   </header>
 </template>
+
+<style scoped>
+.nav-link {
+  @apply text-neutral-700 dark:text-gray-300 hover:text-neutral-900 dark:hover:text-white transition-colors relative font-medium;
+}
+.nav-link::after {
+  content: '';
+  @apply block h-0.5 bg-neutral-500 dark:bg-white absolute left-0 -bottom-1 w-0 transition-all duration-300;
+}
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.icon-btn {
+  @apply p-2 rounded-lg transition-colors duration-300 
+         text-neutral-700 dark:text-gray-300 
+         hover:bg-white/40 dark:hover:bg-white/10;
+}
+
+.fade-slide-enter-active, .fade-slide-leave-active {
+  transition: all 0.3s ease-out;
+}
+.fade-slide-enter-from { opacity: 0; transform: translateY(-10px); }
+.fade-slide-leave-to { opacity: 0; transform: translateY(-10px); }
+</style>
