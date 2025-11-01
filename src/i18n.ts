@@ -3,16 +3,19 @@ import { createI18n } from 'vue-i18n'
 import pt from './locales/pt.json'
 import en from './locales/en.json'
 
-const messages = {
-  pt: pt,
-  en: en
-}
+export const messages = {
+  pt,
+  en
+} as const
 
-const i18n = createI18n({
+export type Locale = keyof typeof messages
+
+export const i18n = createI18n({
   legacy: false,
-  locale: 'pt',
+  locale: (navigator.language.startsWith('pt') ? 'pt' : 'en'),
   fallbackLocale: 'en',
   messages,
+  globalInjection: true,
 })
 
-export default i18n
+export type I18nMessage = typeof messages[Locale]

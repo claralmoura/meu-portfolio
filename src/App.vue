@@ -32,14 +32,14 @@ const blobStyle = computed(() => ({
         class="
           absolute top-20 -left-20 w-72 h-72 rounded-full 
           filter blur-3xl opacity-50 dark:opacity-20
-          animate-blob animate-color-1
+          animate-blob
         "
       ></div>
       <div 
         class="
           absolute bottom-40 -right-20 w-80 h-80 rounded-full 
           filter blur-3xl opacity-50 dark:opacity-20
-          animate-blob [animation-delay:4s] animate-color-2
+          animate-blob [animation-delay:4s]
         "
       ></div>
       <div 
