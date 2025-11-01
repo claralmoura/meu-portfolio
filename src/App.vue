@@ -7,9 +7,12 @@ import AboutSection from './components/AboutSection.vue'
 import ExperienceSection from './components/ExperienceSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import SkillsAndContact from './components/SkillsAndContact.vue'
+import BackToTop from './components/BackToTop.vue' // <-- NOVO
 
+// Lógica do Scroll
 const { isScrolled } = useScroll()
 
+// Lógica do Mouse
 const { x, y } = useMouse()
 const blobStyle = computed(() => ({
   transform: `translate(${x.value - 192}px, ${y.value - 192}px)`
@@ -32,14 +35,14 @@ const blobStyle = computed(() => ({
         class="
           absolute top-20 -left-20 w-72 h-72 rounded-full 
           filter blur-3xl opacity-50 dark:opacity-20
-          animate-blob
+          animate-color-1
         "
       ></div>
       <div 
         class="
           absolute bottom-40 -right-20 w-80 h-80 rounded-full 
           filter blur-3xl opacity-50 dark:opacity-20
-          animate-blob [animation-delay:4s]
+           animate-color-2 [animation-delay:4s]
         "
       ></div>
       <div 
@@ -91,6 +94,6 @@ const blobStyle = computed(() => ({
       dark:from-neutral-900 dark:to-transparent 
       pointer-events-none z-20
     "></div>
-    
+    <BackToTop />
   </div>
 </template>

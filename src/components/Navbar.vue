@@ -60,7 +60,7 @@ const toggleLocale = () => {
           class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors"
           aria-label="Toggle theme"
         >
-          <SunIcon v-if="isDark" class="w-6 h-6" />
+          <SunIcon v-if="!isDark" class="w-6 h-6" />
           <MoonIcon v-else class="w-6 h-6" />
         </button>
         <button 
@@ -120,7 +120,7 @@ const toggleLocale = () => {
           @click="toggleDark()" 
           class="flex items-center gap-2 text-xl text-neutral-800 dark:text-gray-200"
         >
-          <SunIcon v-if="isDark" class="w-6 h-6" />
+          <SunIcon v-if="!isDark" class="w-6 h-6" />
           <MoonIcon v-else class="w-6 h-6" />
           <span>{{ t('navbar.toggleTheme') }}</span>
         </button>
