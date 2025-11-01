@@ -24,25 +24,30 @@ const linkedinIcon = `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="
 </script>
 
 <template>
-  <div class="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
-    
+  <div class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
     <section id="skills">
       <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-neutral-900 dark:text-white mb-12">
         {{ t('skills.title') }}
       </h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6 rounded-3xl backdrop-blur-xl bg-white/40 dark:bg-neutral-800/60 shadow-xl dark:shadow-black/20 border border-white/30 dark:border-white/10">
-        <div 
-          v-for="category in skillCategories" 
-          :key="category.name" 
-          class="p-4 rounded-xl bg-white/50 dark:bg-neutral-700/50 transition-transform duration-300 hover:scale-[1.02] shadow-sm"
-        >
-          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-3">{{ category.name }}</h3>
-          <div class="flex flex-col gap-1">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        
+        <div v-for="category in skillCategories" :key="category.name" class="card-glass p-6">
+          
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-4">{{ category.name }}</h3>
+          
+          <div class="flex flex-col gap-1.5">
             <span 
               v-for="item in category.items" 
               :key="item" 
-              class="px-3 py-1 rounded text-sm bg-white/60 dark:bg-white/5 text-neutral-800 dark:text-gray-300 transition-all duration-200 hover:bg-white/80 dark:hover:bg-white/10 text-left"
+              class="
+                px-3 py-1.5 rounded-lg text-sm 
+                bg-white/30 dark:bg-white/10 
+                border border-white/20 dark:border-white/20 
+                text-neutral-800 dark:text-white 
+                transition-colors duration-200 
+                hover:bg-white/50 dark:hover:bg-white/20
+              "
             >
               {{ item }}
             </span>
@@ -60,15 +65,15 @@ const linkedinIcon = `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a :href="contactInfo.githubUrl" target="_blank" class="contact-btn">
-          <span v-html="githubIcon" class="w-6 h-6"></span>
-          <span>GitHub</span>
-        </a>
-        <a :href="contactInfo.linkedinUrl" target="_blank" class="contact-btn">
+        <a :href="contactInfo.linkedinUrl" target="_blank" class="contact-btn w-full sm:w-auto">
           <span v-html="linkedinIcon" class="w-6 h-6"></span>
           <span>LinkedIn</span>
         </a>
-        <a :href="`mailto:${contactInfo.email}`" class="contact-btn">
+        <a :href="contactInfo.githubUrl" target="_blank" class="contact-btn w-full sm:w-auto">
+          <span v-html="githubIcon" class="w-6 h-6"></span>
+          <span>GitHub</span>
+        </a>
+        <a :href="`mailto:${contactInfo.email}`" class="contact-btn w-full sm:w-auto">
           <EnvelopeIcon class="w-6 h-6" />
           <span>E-mail</span>
         </a>
@@ -78,11 +83,14 @@ const linkedinIcon = `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="
 </template>
 
 <style scoped>
+.card-glass {
+  @apply bg-white/30 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-2xl shadow-lg transition-all duration-300;
+}
+.card-glass:hover {
+  @apply scale-[1.03] shadow-xl;
+}
+
 .contact-btn {
-  @apply flex items-center justify-center gap-2 font-medium py-3 px-6 rounded-lg 
-         border backdrop-blur-md 
-         bg-white/50 dark:bg-white/10 border-white/50 dark:border-white/20 
-         text-neutral-800 dark:text-white 
-         transition-all duration-300 hover:scale-105 hover:bg-white/70 dark:hover:bg-white/20;
+  @apply flex items-center justify-center gap-2 font-medium py-3 px-6 rounded-lg border backdrop-blur-md bg-white/50 dark:bg-white/10 border-white/50 dark:border-white/20 text-neutral-800 dark:text-white transition-all duration-300 hover:scale-105 hover:bg-white/70 dark:hover:bg-white/20;
 }
 </style>
