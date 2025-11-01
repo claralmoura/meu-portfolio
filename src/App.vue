@@ -7,12 +7,10 @@ import AboutSection from './components/AboutSection.vue'
 import ExperienceSection from './components/ExperienceSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import SkillsAndContact from './components/SkillsAndContact.vue'
-import BackToTop from './components/BackToTop.vue' // <-- NOVO
+import BackToTop from './components/BackToTop.vue'
 
-// Lógica do Scroll
 const { isScrolled } = useScroll()
 
-// Lógica do Mouse
 const { x, y } = useMouse()
 const blobStyle = computed(() => ({
   transform: `translate(${x.value - 192}px, ${y.value - 192}px)`

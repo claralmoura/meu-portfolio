@@ -44,12 +44,20 @@
     "title": "Personal Projects",
     "items": [
       {
+        "title": "My Personal Portfolio",
+        "description": "This dynamic portfolio, built with Vue 3, TypeScript, and Tailwind CSS, employs Glassmorphism principle.",
+        "tags": ["Vue 3", "TypeScript", "Tailwind CSS", "Glassmorphism", "UI/UX"],
+        "githubUrl": "https://github.com/claralmoura/meu-portfolio",
+        "key": "meu-portfolio-pessoal"
+      },
+      {
         "title": "My Finances",
         "description": "Full-stack app for personal financial management.",
         "challenge": "Excel spreadsheets were no longer sufficient for effective financial control and tracking personal goals.",
         "solution": "I developed a full-stack application with a NestJS/GraphQL backend and a Vue.js 3 frontend, creating interactive dashboards for visual management.",
         "tags": ["Vue.js 3", "NestJS", "GraphQL", "MongoDB", "TypeScript"],
-        "githubUrl": "https://github.com/claralmoura/financial-app"
+        "githubUrl": "https://github.com/claralmoura/financial-app",
+        "key": "minhas-financas"
       },
       {
         "title": "Beauty Manager",
@@ -57,7 +65,8 @@
         "challenge": "My mother's beauty salon struggled with manual scheduling, which caused errors like double bookings or forgotten appointments.",
         "solution": "I created a scheduling application with a REST API (Python/FastAPI) and a React frontend, allowing clients and administrators to manage schedules.",
         "tags": ["React", "Python", "FastAPI", "MongoDB"],
-        "githubUrl": "https://github.com/afonsomateus21/bm-web"
+        "githubUrl": "https://github.com/afonsomateus21/bm-web",
+        "key": "beauty-manager"
       },
       {
         "title": "Gestalt in Media",
@@ -65,7 +74,8 @@
         "challenge": "Translate theoretical Gestalt concepts into a digital experience, explaining how these principles apply in movies, series, and games.",
         "solution": "I developed an interactive media using React, TypeScript, and Vite. The site visually presents the concepts and exemplifies Gestalt in the context of these media.",
         "tags": ["React", "TypeScript", "Vite", "UI/UX"],
-        "githubUrl": "https://github.com/afonsomateus21/gestalt-midia"
+        "githubUrl": "https://github.com/afonsomateus21/gestalt-midia",
+        "key": "gestalt-em-midia"
       }
     ]
   },

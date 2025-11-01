@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+import colors from 'tailwindcss/colors'
+
 export default {
   darkMode: 'class',
   content: [
@@ -7,6 +8,14 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        'neutral-900': colors.neutral[900],
+        'neutral-100': colors.neutral[100],
+        'gradient-start': '#FFEDD5',
+        'gradient-end': '#FECACA',
+        'dark-gradient-start': colors.neutral[900],
+        'dark-gradient-end': colors.neutral[800],
+      },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
@@ -36,19 +45,21 @@ export default {
           },
         },
         'color-1': {
-          '0%, 100%': { backgroundColor: '#93c5fd' }, // blue-300
-          '50%': { backgroundColor: '#d8b4fe' }, // purple-300
+          '0%, 100%': { backgroundColor: '#38bdf8' },
+          '50%': { backgroundColor: '#d8b4fe' },
         },
         'color-2': {
-          '0%, 100%': { backgroundColor: '#d8b4fe' }, // purple-300
-          '50%': { backgroundColor: '#f9a8d4' }, // pink-300
+          '0%, 100%': { backgroundColor: '#d8b4fe' },
+          '50%': { backgroundColor: '#f97316' },
         },
         'color-3': {
-          '0%, 100%': { backgroundColor: '#6ee7b7' }, // teal-300
-          '50%': { backgroundColor: '#fdba74' }, // orange-300
-        },
+          '0%, 100%': { backgroundColor: '#06b6d4' },
+          '50%': { backgroundColor: '#65a30d' },
+        }
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

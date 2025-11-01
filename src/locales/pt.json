@@ -1,6 +1,6 @@
 {
   "about": {
-    "title": "Desenvolvedora Fullstack com paixão por código limpo e soluções escaláveis",
+    "title": "Desenvolvedora Fullstack com paixão por código limpo e soluções escaláveis.",
     "description": "Mais de dois anos de experiência em startup B2B, atuando na criação, otimização e manutenção de soluções web. Foco em performance de sistemas, otimização de queries em MongoDB e mentoria técnica. Sólidos conhecimentos em JavaScript, Node.js (NestJS, Express), Vue.js e arquitetura Serverless."
   },
   "buttons": {
@@ -11,7 +11,7 @@
     "title": "Experiência Profissional",
     "jobs": [
       {
-        "title": "Desenvolvedor Fullstack Pleno",
+        "title": "Desenvolvedora Fullstack Pleno",
         "company": "COTABOX TECNOLOGIA E SOFTWARE LTDA",
         "date": "Novembro/2025 - Presente",
         "points": [
@@ -21,7 +21,7 @@
         ]
       },
       {
-        "title": "Desenvolvedor Fullstack Jr.",
+        "title": "Desenvolvedora Fullstack Junior",
         "company": "COTABOX TECNOLOGIA E SOFTWARE LTDA",
         "date": "Julho/2024 - Novembro/2025",
         "points": [
@@ -31,7 +31,7 @@
         ]
       },
       {
-        "title": "Estagiário em Desenvolvimento Fullstack",
+        "title": "Estagiária em Desenvolvimento Fullstack",
         "company": "COTABOX TECNOLOGIA E SOFTWARE LTDA",
         "date": "Novembro/2023 - Julho/2024",
         "points": [
@@ -44,12 +44,20 @@
     "title": "Projetos Pessoais",
     "items": [
       {
+        "title": "Meu Portfólio Pessoal",
+        "description": "Este portfólio dinâmico, desenvolvido com Vue 3, TypeScript e Tailwind CSS, utiliza princípios de Glassmorphism.",
+        "tags": ["Vue.js 3", "TypeScript", "Tailwind CSS", "Glassmorphism", "UI/UX"],
+        "githubUrl": "https://github.com/claralmoura/meu-portfolio",
+        "key": "meu-portfolio-pessoal"
+      },
+      {
         "title": "Minhas Finanças",
-        "description": "App full-stack para gestão financeira pessoal.",
+        "description": "App full-stack para gestão financeira pessoal feito para substituir o uso de planilhas no dia a dia.",
         "challenge": "Planilhas de Excel não eram mais suficientes para um controle financeiro eficaz e para o acompanhamento de metas pessoais.",
         "solution": "Desenvolvi uma aplicação full-stack com backend em NestJS/GraphQL e frontend em Vue.js 3, criando dashboards interativos para um gerenciamento visual.",
         "tags": ["Vue.js 3", "NestJS", "GraphQL", "MongoDB", "TypeScript"],
-        "githubUrl": "https://github.com/claralmoura/financial-app"
+        "githubUrl": "https://github.com/claralmoura/financial-app",
+        "key": "minhas-financas"
       },
       {
         "title": "Beauty Manager",
@@ -57,7 +65,8 @@
         "challenge": "O salão de beleza da minha mãe tinha dificuldades com agendamentos manuais, o que causava erros como marcações duplicadas ou esquecimentos.",
         "solution": "Criei uma aplicação de agendamento com uma API REST (Python/FastAPI) e um frontend em React, permitindo que clientes e administradores gerenciem horários.",
         "tags": ["React", "Python", "FastAPI", "MongoDB"],
-        "githubUrl": "https://github.com/afonsomateus21/bm-web"
+        "githubUrl": "https://github.com/afonsomateus21/bm-web",
+        "key": "beauty-manager"
       },
       {
         "title": "Gestalt em Mídia",
@@ -65,7 +74,8 @@
         "challenge": "Traduzir os conceitos teóricos da Gestalt em uma experiência digital, explicando como esses princípios se aplicam em filmes, séries e jogos.",
         "solution": "Desenvolvi uma mídia interativa usando React, TypeScript e Vite. O site apresenta os conceitos de forma visual e exemplifica a Gestalt no contexto dessas mídias.",
         "tags": ["React", "TypeScript", "Vite", "UI/UX"],
-        "githubUrl": "https://github.com/afonsomateus21/gestalt-midia"
+        "githubUrl": "https://github.com/afonsomateus21/gestalt-midia",
+        "key": "gestalt-em-midia"
       }
     ]
   },

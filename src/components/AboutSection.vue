@@ -59,9 +59,10 @@ const profilePicture = new URL('../assets/minha-foto.jpg', import.meta.url).href
       </div>
 
       <div class="flex-1 text-center md:text-left">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-neutral-900 dark:text-white">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-neutral-900 dark:text-white">
           {{ t('about.title') }}
         </h2>
+        
         <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">
           {{ t('about.description') }}
         </p>
@@ -75,9 +76,9 @@ const profilePicture = new URL('../assets/minha-foto.jpg', import.meta.url).href
               font-medium py-3 px-5 rounded-lg 
               transition-all duration-300 hover:scale-105 
               border backdrop-blur-md 
-              bg-brand-primary/20 border-brand-primary/30 text-brand-primary
-              dark:bg-brand-primary/10 dark:border-brand-primary/20 dark:text-brand-primary-light
-              dark:hover:bg-brand-primary/20
+              bg-blue-600/20 border-blue-600/30 text-blue-800 shadow-lg
+              dark:bg-blue-800/40 dark:border-blue-800/90 dark:text-blue-400
+              dark:hover:bg-blue-600/20
             "
           >
             <span class="w-5 h-5" v-html="linkedinIcon"></span>
@@ -92,8 +93,8 @@ const profilePicture = new URL('../assets/minha-foto.jpg', import.meta.url).href
               font-medium py-3 px-5 rounded-lg 
               transition-all duration-300 hover:scale-105 
               border backdrop-blur-md 
-              bg-white/50 border-white/50 text-neutral-800
-              hover:bg-white/70
+              bg-white/30 border-white/50 text-neutral-800 shadow-lg
+              hover:bg-white/40
               dark:bg-white/10 dark:border-white/20 dark:text-white
               dark:hover:bg-white/20
             "
