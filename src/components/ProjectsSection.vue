@@ -20,13 +20,11 @@ const githubIcon = `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="tr
 
 <template>
   <section id="projects" class="py-16 sm:py-24">
-    
     <h2 class="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl mb-12">
       {{ t('projects.title') }}
     </h2>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
       <div 
         v-for="project in projects" 
         :key="project.title"
@@ -34,7 +32,7 @@ const githubIcon = `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="tr
           p-6 rounded-2xl flex flex-col
           transition-all duration-300
           border backdrop-blur-lg 
-          bg-white/30 border-white/40 shadow-xl shadow-gray-300/50
+          bg-white/60 border-white/40 shadow-xl shadow-gray-300/50
           dark:bg-white/5 dark:border-white/20 dark:shadow-black/30
         "
       >
@@ -54,8 +52,8 @@ const githubIcon = `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="tr
             class="
               text-xs font-medium py-1 px-3 rounded-full
               border backdrop-blur-sm
-              bg-blue-100/50 border-blue-100/50 text-blue-800
-              dark:bg-white/5 dark:border-white/10 dark:text-blue-300
+              bg-white/40 border-white/50 text-brand-primary
+              dark:bg-white/10 dark:border-white/20 dark:text-brand-primary-light
             "
           >
             {{ tag }}

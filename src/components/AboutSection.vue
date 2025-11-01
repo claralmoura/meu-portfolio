@@ -75,9 +75,9 @@ const profilePicture = new URL('../assets/minha-foto.jpg', import.meta.url).href
               font-medium py-3 px-5 rounded-lg 
               transition-all duration-300 hover:scale-105 
               border backdrop-blur-md 
-              bg-blue-500/20 border-blue-500/30 text-blue-800
-              dark:bg-blue-500/10 dark:border-blue-500/20 dark:text-blue-300
-              dark:hover:bg-blue-500/20
+              bg-brand-primary/20 border-brand-primary/30 text-brand-primary
+              dark:bg-brand-primary/10 dark:border-brand-primary/20 dark:text-brand-primary-light
+              dark:hover:bg-brand-primary/20
             "
           >
             <span class="w-5 h-5" v-html="linkedinIcon"></span>

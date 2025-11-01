@@ -3,8 +3,17 @@ import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
 import { EnvelopeIcon } from '@heroicons/vue/24/solid'
 
-interface SkillCategory { name: string; items: string[] }
-interface ContactInfo { title: string; description: string; email: string; linkedinUrl: string; githubUrl: string }
+interface SkillCategory {
+  name: string
+  items: string[]
+}
+interface ContactInfo {
+  title: string
+  description: string
+  email: string
+  linkedinUrl: string
+  githubUrl: string
+}
 const { t, tm } = useI18n()
 const skillCategories = computed((): SkillCategory[] => {
   return tm('skills.categories') as SkillCategory[]
@@ -24,6 +33,7 @@ const linkedinIcon = `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="
       <h2 class="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl mb-12">
         {{ t('skills.title') }}
       </h2>
+      
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div v-for="category in skillCategories" :key="category.name">
           <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-4">{{ category.name }}</h3>
@@ -38,22 +48,60 @@ const linkedinIcon = `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="
 
     <section id="contact" class="text-center">
       <h2 class="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl mb-4">
-        {{ contactInfo.title }}
+        {{ t('contact.title') }}
       </h2>
       <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
-        {{ contactInfo.description }}
+        {{ t('contact.description') }}
       </p>
       
-      <div class="flex justify-center gap-6">
-        <a :href="`mailto:${contactInfo.email}`" class="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a 
+          :href="`mailto:${contactInfo.email}`"
+          class="
+            flex items-center justify-center gap-2 
+            font-medium py-3 px-5 rounded-lg 
+            transition-all duration-300 hover:scale-105 
+            border backdrop-blur-md w-full sm:w-auto
+            bg-white/50 border-white/50 text-neutral-800
+            hover:bg-white/70
+            dark:bg-white/10 dark:border-white/20 dark:text-white
+            dark:hover:bg-white/20
+          "
+        >
           <EnvelopeIcon class="w-6 h-6" />
           <span class="font-medium">E-mail</span>
         </a>
-        <a :href="contactInfo.linkedinUrl" target="_blank" class="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors">
+        <a 
+          :href="contactInfo.linkedinUrl" 
+          target="_blank"
+          class="
+            flex items-center justify-center gap-2 
+            font-medium py-3 px-5 rounded-lg 
+            transition-all duration-300 hover:scale-105 
+            border backdrop-blur-md w-full sm:w-auto
+            bg-white/50 border-white/50 text-neutral-800
+            hover:bg-white/70
+            dark:bg-white/10 dark:border-white/20 dark:text-white
+            dark:hover:bg-white/20
+          "
+        >
           <span class="w-6 h-6" v-html="linkedinIcon"></span>
           <span class="font-medium">LinkedIn</span>
         </a>
-        <a :href="contactInfo.githubUrl" target="_blank" class="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors">
+        <a 
+          :href="contactInfo.githubUrl" 
+          target="_blank"
+          class="
+            flex items-center justify-center gap-2 
+            font-medium py-3 px-5 rounded-lg 
+            transition-all duration-300 hover:scale-105 
+            border backdrop-blur-md w-full sm:w-auto
+            bg-white/50 border-white/50 text-neutral-800
+            hover:bg-white/70
+            dark:bg-white/10 dark:border-white/20 dark:text-white
+            dark:hover:bg-white/20
+          "
+        >
           <span class="w-6 h-6" v-html="githubIcon"></span>
           <span class="font-medium">GitHub</span>
         </a>
