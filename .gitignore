@@ -47,7 +47,7 @@ web_modules/
 # TypeScript cache
 *.tsbuildinfo
 
-# Optional npm cache directory
+# Optional npm cache
 .npm
 
 # Optional eslint cache
@@ -139,4 +139,3 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 .vite
-*.d.ts

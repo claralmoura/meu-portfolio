@@ -11,7 +11,7 @@
     "composite": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
 
