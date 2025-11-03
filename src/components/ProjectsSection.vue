@@ -2,6 +2,7 @@
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
 import GithubIcon from './icons/GithubIcon.vue'
+import { useAnalytics } from '../composables/useAnalytics'
 
 interface Project {
   title: string
@@ -12,6 +13,7 @@ interface Project {
 }
 
 const { t, tm } = useI18n()
+const { trackClick } = useAnalytics()
 
 const projects = computed((): Project[] => {
   return (tm('projects.items') as Project[]) || []
@@ -59,7 +61,7 @@ function getDemoImage(key: string): string {
       >
         <div
           :class="getColorAnimation(index)"
-          class="absolute w-64 h-64 rounded-full blur-3xl opacity-25 dark:opacity-10 -z-10 transition-all duration-500 mix-blend-soft-light"
+          class="absolute w-64 h-64 rounded-full blur-3xl -z-10 transition-all duration-500 mix-blend-soft-light"
           :style="{ animationDelay: `${index * 1.2}s` }"
         ></div>
 
@@ -73,6 +75,7 @@ function getDemoImage(key: string): string {
               target="_blank"
               rel="noopener noreferrer"
               class="text-gray-500 dark:text-gray-400 hover:text-neutral-900 dark:hover:text-white transition-colors w-6 h-6"
+              @click="() => trackClick('click_project_github', { project_title: project.title })"
             >
               <GithubIcon />
             </a>
@@ -108,23 +111,6 @@ function getDemoImage(key: string): string {
 </template>
 
 <style scoped>
-.card-glass::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.15) 40%, transparent 100%);
-  transform: translateX(-100%) skewX(-15deg);
-  opacity: 0;
-  transition: all 0.8s ease-in-out;
-  border-radius: inherit;
-  pointer-events: none;
-}
-
-.card-glass:hover::before {
-  transform: translateX(100%) skewX(-15deg);
-  opacity: 1;
-}
-
 .card-glass:hover {
   backdrop-filter: blur(24px) saturate(160%);
 }

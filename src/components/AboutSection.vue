@@ -4,8 +4,10 @@ import { computed, ref } from 'vue'
 import { useMouseInElement } from '@vueuse/core'
 import GithubIcon from './icons/GithubIcon.vue'
 import LinkedinIcon from './icons/LinkedinIcon.vue'
+import { useAnalytics } from '../composables/useAnalytics'
 
 const { t } = useI18n()
+const { trackClick } = useAnalytics()
 
 const target = ref<HTMLElement | null>(null)
 const { elementX, elementY, isOutside, elementHeight, elementWidth } = useMouseInElement(target)
@@ -63,6 +65,7 @@ const profilePicture = new URL('../assets/minha-foto.jpg', import.meta.url).href
             :href="t('contact.linkedinUrl')"
             target="_blank"
             class="flex items-center gap-2 font-medium py-3 px-5 rounded-xl border border-blue-600/30 dark:border-blue-800/70 bg-blue-600/20 dark:bg-blue-800/30 text-blue-800 dark:text-blue-400 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+            @click="() => trackClick('click_linkedin', { section: 'about' })"
           >
             <LinkedinIcon class="w-5 h-5" />
             {{ t('buttons.linkedin') }}
@@ -72,6 +75,7 @@ const profilePicture = new URL('../assets/minha-foto.jpg', import.meta.url).href
             :href="t('contact.githubUrl')"
             target="_blank"
             class="flex items-center gap-2 font-medium py-3 px-5 rounded-xl border border-white/30 dark:border-white/20 bg-white/30 dark:bg-white/10 text-neutral-800 dark:text-white shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+            @click="() => trackClick('click_github', { section: 'about' })"
           >
             <GithubIcon class="w-5 h-5" />
             {{ t('buttons.github') }}

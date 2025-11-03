@@ -2,8 +2,10 @@
 import { computed } from 'vue'
 import { ArrowUpIcon } from '@heroicons/vue/24/solid'
 import { useScroll } from '../composables/useScroll'
+import { useAnalytics } from '../composables/useAnalytics'
 
 const { y } = useScroll()
+const { trackClick } = useAnalytics()
 
 const isButtonVisible = computed(() => y.value > 400)
 
@@ -12,6 +14,7 @@ const scrollToTop = () => {
     top: 0,
     behavior: 'smooth',
   })
+  trackClick('click_back_to_top')
 }
 </script>
 

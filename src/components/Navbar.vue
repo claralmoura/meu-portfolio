@@ -4,8 +4,10 @@ import { useI18n } from 'vue-i18n'
 import { useDark, useToggle } from '@vueuse/core'
 import { SunIcon, MoonIcon, LanguageIcon, Bars3Icon, XMarkIcon } from '@heroicons/vue/24/solid'
 import { useScroll } from '../composables/useScroll'
+import { useAnalytics } from '../composables/useAnalytics'
 
 const { t, locale } = useI18n()
+const { trackClick } = useAnalytics()
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 const isMobileMenuOpen = ref(false)
@@ -17,6 +19,12 @@ const closeMobileMenu = () => {
 }
 const toggleLocale = () => {
   locale.value = locale.value === 'pt' ? 'en' : 'pt'
+  trackClick('click_toggle_locale', { locale: locale.value })
+}
+
+const trackNavClick = (link: string) => {
+  trackClick('click_nav', { link })
+  closeMobileMenu()
 }
 </script>
 
@@ -28,17 +36,34 @@ const toggleLocale = () => {
     }"
   >
     <div class="max-w-4xl mx-auto flex justify-between items-center px-4 sm:px-0">
-      <a href="#about" class="text-2xl font-bold text-neutral-800 dark:text-white"> Clara Lívia </a>
+      <a
+        href="#about"
+        class="text-2xl font-bold text-neutral-800 dark:text-white"
+        @click="() => trackNavClick('about')"
+      >
+        Clara Lívia
+      </a>
 
       <nav class="hidden md:flex gap-6">
-        <a href="#about" class="nav-link">{{ t('navbar.about') }}</a>
-        <a href="#experience" class="nav-link">{{ t('navbar.experience') }}</a>
-        <a href="#projects" class="nav-link">{{ t('navbar.projects') }}</a>
-        <a href="#contact" class="nav-link">{{ t('navbar.contact') }}</a>
+        <a href="#about" class="nav-link" @click="() => trackNavClick('about')">{{ t('navbar.about') }}</a>
+        <a href="#experience" class="nav-link" @click="() => trackNavClick('experience')">{{
+          t('navbar.experience')
+        }}</a>
+        <a href="#projects" class="nav-link" @click="() => trackNavClick('projects')">{{ t('navbar.projects') }}</a>
+        <a href="#contact" class="nav-link" @click="() => trackNavClick('contact')">{{ t('navbar.contact') }}</a>
       </nav>
 
       <div class="hidden md:flex items-center gap-3">
-        <button class="icon-btn" aria-label="Toggle theme" @click="toggleDark()">
+        <button
+          class="icon-btn"
+          aria-label="Toggle theme"
+          @click="
+            () => {
+              toggleDark()
+              trackClick('click_toggle_theme', { theme: isDark ? 'dark' : 'light' })
+            }
+          "
+        >
           <MoonIcon v-if="isDark" class="w-6 h-6" />
           <SunIcon v-else class="w-6 h-6" />
         </button>
@@ -69,31 +94,39 @@ const toggleLocale = () => {
         <a
           href="#about"
           class="text-2xl font-medium text-neutral-800 dark:text-white hover:text-blue-600"
-          @click="closeMobileMenu"
+          @click="() => trackNavClick('about')"
           >{{ t('navbar.about') }}</a
         >
         <a
           href="#experience"
           class="text-2xl font-medium text-neutral-800 dark:text-white hover:text-blue-600"
-          @click="closeMobileMenu"
+          @click="() => trackNavClick('experience')"
           >{{ t('navbar.experience') }}</a
         >
         <a
           href="#projects"
           class="text-2xl font-medium text-neutral-800 dark:text-white hover:text-blue-600"
-          @click="closeMobileMenu"
+          @click="() => trackNavClick('projects')"
           >{{ t('navbar.projects') }}</a
         >
         <a
           href="#contact"
           class="text-2xl font-medium text-neutral-800 dark:text-white hover:text-blue-600"
-          @click="closeMobileMenu"
+          @click="() => trackNavClick('contact')"
           >{{ t('navbar.contact') }}</a
         >
 
         <hr class="w-full border-gray-300 dark:border-gray-700 my-4" />
 
-        <button class="flex items-center gap-2 text-xl text-neutral-800 dark:text-white" @click="toggleDark()">
+        <button
+          class="flex items-center gap-2 text-xl text-neutral-800 dark:text-white"
+          @click="
+            () => {
+              toggleDark()
+              trackClick('click_toggle_theme', { theme: isDark ? 'dark' : 'light' })
+            }
+          "
+        >
           <MoonIcon v-if="isDark" class="w-6 h-6" />
           <SunIcon v-else class="w-6 h-6" />
           <span>{{ t('navbar.toggleTheme') }}</span>
