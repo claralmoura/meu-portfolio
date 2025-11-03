@@ -23,11 +23,11 @@ O design segue uma estética minimalista e elegante, com funcionalidades de UX a
 
 Acompanhe a versão mais recente e online através deste link, após o deploy:
 
-[Deploy Vercel](https://meu-portfolio-roan-xi.vercel.app/)
+[Deploy Vercel](https://claralivia.vercel.app/)
 
 </br>
 
-![Captura de Tela do Portfólio]()
+![Captura de Tela do Portfólio](public/og-image.png)
 
 ## Autor & Contato
 
