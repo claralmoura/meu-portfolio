@@ -9,6 +9,7 @@
 
     /* Bundler mode */
     "composite": true,
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
@@ -22,5 +23,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "tailwind.config.js", "eslint.config.js"]
 }
